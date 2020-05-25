@@ -52,8 +52,15 @@ def home(request):
     qs = Student.objects.filter(name__contains='a')
 
 
+    # In queries
+    imarks =[23,33,99]
+    qs =Student.objects.filter(marks__in=imarks)
 
-    # date orm
+    #between query gte and lte
+
+
+
+    # date queries
     specific_date= date(2020,4,15)
     qs = Student.objects.filter(dob__exact=specific_date)
 
